@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/main.css">
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+
+        <!-- titolo  -->
+        <title>Page</title>
+    </head>
+    <body>
+
+        <div class="container" id="pippo">
+
+            <div>{{nomeutente }}</div>
+            <div>{{etautente}}</div>
+            <div>{{emailutente}}</div>
+
+            <hr />
+
+            <div class="contenitore_lista">
+                <div v-for="(utente, indice) in userpost">
+                    <div v-for="(post, ID_post) in utente.post">
+                        <h2><span class="border">{{post.text}}</span></h2>
+                        <div>Post di {{utente.name}} del {{post.published }}</div>
+                        <button @click="visualizzaUtente(utente.name,
+                            utente.age, utente.email)" class="btn
+                            btn-secondary"> visualizza utente </button>
+
+                    </div>
+                    <hr />
+                </div>
+            </div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+        <script src="js/main.js" defer></script>
+
+    </body>
+</html>
